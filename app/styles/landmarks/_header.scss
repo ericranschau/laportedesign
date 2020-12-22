@@ -1,0 +1,26 @@
+header {
+  background-image: url("/images/header-bg-xs.png");
+  background-position: center;
+  background-size: cover;
+
+  @include media-breakpoint-up(sm) {
+    background-image: url("/images/header-bg-sm.png");
+  }
+  @include media-breakpoint-up(md) {
+    background-image: url("/images/header-bg-md.png");
+  }
+  @include media-breakpoint-up(lg) {
+    background-image: url("/images/header-bg-lg.png");
+  }
+  @include media-breakpoint-up(xl) {
+    background-image: url("/images/header-bg-xl.png");
+  }
+}
+
+header blockquote {
+  color: $brand-calmpink;
+}
+
+header h1 {
+  color: $brand-white;
+}
