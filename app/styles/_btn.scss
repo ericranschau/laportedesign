@@ -1,0 +1,14 @@
+.btn {
+  background-color: transparent;
+  border: 2px solid $brand-white;
+  border-radius: 2em;
+  font-weight: bold;
+  padding: 0.5rem 2rem;
+}
+
+.btn-primary {
+  &:hover {
+    background-color: transparent;
+    border-color: $brand-white;
+  }
+}

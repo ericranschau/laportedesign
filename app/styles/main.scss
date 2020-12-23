@@ -4,5 +4,8 @@
 
 @import "node_modules/bootstrap/scss/bootstrap";
 
-@import "./_typography";
-@import "./landmarks/_header";
+@import "_btn";
+@import "_hero";
+@import "_typography";
+@import "landmarks/_header";
+@import "landmarks/_nav";

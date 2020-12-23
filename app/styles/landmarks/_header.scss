@@ -2,6 +2,7 @@ header {
   background-image: url("/images/header-bg-xs.png");
   background-position: center;
   background-size: cover;
+  padding: 12rem 0 8.5rem 0;
 
   @include media-breakpoint-up(sm) {
     background-image: url("/images/header-bg-sm.png");
