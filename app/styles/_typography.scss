@@ -3,14 +3,32 @@ blockquote {
   padding-bottom: 0.3rem;
   padding-left: 1.5rem;
   padding-top: 0.3rem;
-  font-size: 1.25rem;
 }
 
 h1 {
-  margin-bottom: 2rem;
+  margin-bottom: 2.75rem;
   line-height: 1.1;
 }
 
 .font-italic {
-  background-color: $brand-shorelineyelow;
+  position: relative;
+
+  &::before {
+    background-color: $brand-shorelineyelow;
+    content: '';
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+.text-cols {
+  column-gap: 4rem;
+}
+
+.text-cols.text-cols-2 {
+  column-count: 2;
 }
