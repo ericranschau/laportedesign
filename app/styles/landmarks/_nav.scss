@@ -1,5 +1,52 @@
 nav {
-  padding: 1.5rem 0 8rem 0;
+
+  padding: 1.5rem 0;
   position: fixed;
   width: 100%;
+  z-index: 1;
+}
+
+nav #contact {
+  background-clip: padding-box;
+  box-sizing: border-box;
+  position: relative;
+
+  &::before {
+    border-radius: inherit;
+    bottom: 0px;
+    content: '';
+    left: 0px;
+    margin: -2px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: -1;
+  }
+}
+
+nav #logo-gradient {
+  display: none;
+}
+
+nav.collapsed {
+  backdrop-filter: blur(8px);
+  background-color: rgba(248,248,248,0.8);
+}
+
+nav.collapsed #contact {
+  background-color: $brand-white;
+  border-color: transparent;
+  color: $brand-brightcobalt;
+
+  &::before {
+    background: linear-gradient(to right, #415397, #DA5770);
+  }
+}
+
+nav.collapsed #logo-gradient {
+  display: inline-block;
+}
+
+nav.collapsed #logo-white {
+  display: none;
 }
