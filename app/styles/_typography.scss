@@ -1,13 +1,41 @@
 blockquote {
   border-left: 2px solid $brand-shorerose;
-  padding-bottom: 0.3rem;
+  line-height: 1.5rem;
   padding-left: 1.5rem;
-  padding-top: 0.3rem;
+}
+
+blockquote p:last-of-type {
+  margin-bottom: 0rem;
 }
 
 h1 {
-  margin-bottom: 2.75rem;
-  line-height: 1.1;
+  font-size: 2.25rem;
+  letter-spacing: -0.02rem;
+  line-height: 2.5rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 2.5rem;
+    line-height: 2.75rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 2.75rem;
+    line-height: 3rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 3.25rem;
+    line-height: 3.5rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 4rem;
+    line-height: 4.25rem;
+  }
+}
+
+p {
+  margin-bottom: 1.5rem;
 }
 
 .font-italic {
@@ -30,5 +58,9 @@ h1 {
 }
 
 .text-cols.text-cols-2 {
-  column-count: 2;
+  column-count: 1;
+
+  @include media-breakpoint-up(md) {
+    column-count: 2;
+  }
 }

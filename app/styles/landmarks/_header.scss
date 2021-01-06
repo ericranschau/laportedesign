@@ -2,28 +2,64 @@ header {
   background-image: url("/images/header-bg-xs.png");
   background-position: center;
   background-size: cover;
-  padding: 12rem 0 8.5rem 0;
+  padding: 10rem 0 7rem 0;
 
   @include media-breakpoint-up(sm) {
     background-image: url("/images/header-bg-sm.png");
+    padding: 9rem 0 6rem 0;
   }
+
   @include media-breakpoint-up(md) {
     background-image: url("/images/header-bg-md.png");
+    padding: 10rem 0 7rem 0;
   }
+
   @include media-breakpoint-up(lg) {
     background-image: url("/images/header-bg-lg.png");
+    padding: 11rem 0 8rem 0;
   }
+
   @include media-breakpoint-up(xl) {
     background-image: url("/images/header-bg-xl.png");
+    padding: 12rem 0 9rem 0;
   }
 }
 
 header blockquote {
   color: $brand-calmpink;
   font-size: 1.25rem;
+  line-height: 1.2;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.5rem;
+    line-height:  1.75rem;
+  }
 }
 
 header h1 {
   color: $brand-white;
+  font-size: 1.875rem;
+  line-height: 2.125rem;
+  letter-spacing: 0rem;
   margin-bottom: 2rem;
+
+  @include media-breakpoint-up(sm) {
+    line-height: 2.3rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 2.5rem;
+    line-height: 2.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 2.75rem;
+    line-height: 3rem;
+  }
 }
