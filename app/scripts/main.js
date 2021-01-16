@@ -1,9 +1,20 @@
-console.log('\'Allo \'Allo!');
+$(function(){
+  var $body = $('body');
+  var $header = $('header');
+  var $nav = $('nav');
 
-// Uncomment to enable Bootstrap tooltips
-// https://getbootstrap.com/docs/4.0/components/tooltips/#example-enable-tooltips-everywhere
-// $(function () { $('[data-toggle="tooltip"]').tooltip(); });
+  var testWindowScrollPosition = function() {
+      if (
+        document.body.scrollTop > $header.outerHeight(true) - $nav.outerHeight(true) ||
+        document.documentElement.scrollTop > $header.outerHeight(true) - $nav.outerHeight(true)
+      ) {
+          $nav.addClass('collapsed');
+      } else {
+          $nav.removeClass('collapsed');
+      }
+  }
 
-// Uncomment to enable Bootstrap popovers
-// https://getbootstrap.com/docs/4.0/components/popovers/#example-enable-popovers-everywhere
-// $(function () { $('[data-toggle="popover"]').popover(); });
+  $(window).scroll(function() {
+      testWindowScrollPosition();
+  });
+});

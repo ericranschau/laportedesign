@@ -26,9 +26,11 @@
       <div class="container">
         <div class="row">
           <div class="col col-md-11 offset-md-1">
-            <img height="44" id="logo-white" src="images/logo-white.svg" width="44" />
-            <img height="44" id="logo-gradient" src="images/logo-gradient.svg" width="44" />
-            <button class="btn btn-primary float-right" id="contact">Contact</button>
+            <div class="nav-logoWrapper">
+              <img height="44" id="logo-white" src="images/logo-white.svg" width="44" />
+              <img height="44" id="logo-gradient" src="images/logo-gradient.svg" width="44" />
+            </div>
+            <a class="btn btn-primary float-right" href="email:holler@laporte.design" id="contact">Contact</a>
           </div>
         </div>
       </div>
@@ -47,6 +49,7 @@
         </div>
       </div>
     </header>
+    <!-- BEGIN: Hero -->
     <section class="hero">
       <div class="container">
         <div class="row">
@@ -66,26 +69,31 @@
         </div>
       </div>
     </section>
+    <!-- BEGIN: Storyboard - Formica -->
     <section class="storyboard first">
       <div class="container">
         <img src="images/storyboards/formica-xl.png" width="100%" />
       </div>
     </section>
+    <!-- BEGIN: Storyboard - WinField United -->
     <section class="storyboard">
       <div class="container">
         <img src="images/storyboards/winfieldunited-xl.png" width="100%" />
       </div>
     </section>
+    <!-- BEGIN: Storyboard - Cisco Impact -->
     <section class="storyboard">
       <div class="container">
         <img src="images/storyboards/ciscoimpact-xl.png" width="100%" />
       </div>
     </section>
+    <!-- BEGIN: Storyboard - On Time Delivery -->
     <section class="storyboard">
       <div class="container">
         <img src="images/storyboards/ontimedelivery-xl.png" width="100%" />
       </div>
     </section>
+    <!-- BEGIN: Brand Experience -->
     <section class="clients">
       <div class="container">
         <div class="row">
@@ -115,6 +123,7 @@
         </div>
       </div>
     </section>
+    <!-- BEGIN: Partners & Collaborators -->
     <section class="clients">
       <div class="container">
         <div class="row">
@@ -184,9 +193,11 @@
     <!-- build:js scripts/vendor.js -->
     <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
     <!-- endbuild -->
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
+    <script src="scripts/scrollMagicController.js"></script>
     <!-- endbuild -->
   </body>
 </html>
