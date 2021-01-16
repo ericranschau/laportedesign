@@ -53,6 +53,27 @@ p {
   }
 }
 
+.list {
+  list-style-type: none;
+  padding: 0px;
+}
+
+.list li {
+  line-height: 2rem;
+}
+
+.list.list-2col li {
+  display: block;
+  float: left;
+  width: 50%;
+}
+
+.list.list-3col li {
+  display: block;
+  float: left;
+  width: 33.3333%;
+}
+
 .text-cols {
   column-gap: 4rem;
 }

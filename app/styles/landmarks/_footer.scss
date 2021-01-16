@@ -1,0 +1,27 @@
+footer {
+  background-color: $brand-seaurchin;
+  color: $brand-belugawhale;
+  padding: 1.5rem 0px;
+}
+
+footer a {
+  color: $brand-shorelineyelow;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $brand-shorelineyelow;
+  }
+}
+
+footer .socialIcon {
+  margin: 0.5rem;
+}
+
+footer .container .row {
+  align-items: center;
+}
+
+footer #logo-semitransparent {
+  opacity: 0.25;
+}
