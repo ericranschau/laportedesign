@@ -66,12 +66,28 @@ p {
   display: block;
   float: left;
   width: 50%;
+
+  @include media-breakpoint-up(md) {
+    width: 33.3333%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 50%;
+  }
 }
 
 .list.list-3col li {
   display: block;
   float: left;
   width: 33.3333%;
+
+  @include media-breakpoint-up(md) {
+    width: 25%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 33.3333%;
+  }
 }
 
 .text-cols {

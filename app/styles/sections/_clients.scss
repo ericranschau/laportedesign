@@ -3,5 +3,7 @@
 }
 
 .clients .headline.padded {
-  margin-top: 5rem;
+  @include media-breakpoint-up(md) {
+    margin-top: 5rem;
+  }
 }
