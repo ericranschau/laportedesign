@@ -1,4 +1,4 @@
-@-webkit-keyframes anchor-in {
+@keyframes anchor-in {
   from   {
     left: 0;
     right: unset;
@@ -11,7 +11,7 @@
   }
 }
 
-@-webkit-keyframes anchor-out {
+@keyframes anchor-out {
   from   {
     left: unset;
     width: 100%;

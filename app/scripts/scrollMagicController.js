@@ -1,6 +1,5 @@
 $(function(){
   var CONSTANTS = {
-    offset: 100,
     reverse: false,
     triggerHook: 0.8
   };
