@@ -69,17 +69,14 @@ p {
 }
 
 .font-italic {
-  position: relative;
+  background: linear-gradient(to right, rgba(255,255,255,0) 50%, rgba(249,229,186,1.0) 50%);
+  background-position: 0 0;
+  background-size: 200%;
+  display: inline;
+  transition: .3s ease-in-out;
 
-  &::before {
-    background-color: $brand-shorelineyelow;
-    content: '';
-    height: 100%;
-    left: 0px;
-    position: absolute;
-    top: 0px;
-    width: 100%;
-    z-index: -1;
+  &:hover {
+    background-position: -100% 0;
   }
 }
 
