@@ -1,7 +1,11 @@
 $(function(){
   var $body = $('body');
   var $header = $('header');
+  var $section_storyboard = $('section.storyboard');
   var $nav = $('nav');
+
+  // Initialize storyboards
+  $('.container', $section_storyboard).append('<div class="mask"></div>');
 
   var testWindowScrollPosition = function() {
       if (

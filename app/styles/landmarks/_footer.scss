@@ -7,6 +7,10 @@ footer {
 footer a {
   color: $brand-shorelineyelow;
 
+  &::after {
+    border-bottom: 1px solid $brand-shorelineyelow;
+  }
+
   &:active,
   &:focus,
   &:hover {
@@ -14,8 +18,9 @@ footer a {
   }
 }
 
-footer .socialIcon {
+footer .socialLink {
   margin: 0.5rem;
+  padding: 0 0 0.25rem;
 }
 
 footer .container .row {

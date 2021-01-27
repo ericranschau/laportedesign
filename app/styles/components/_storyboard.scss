@@ -3,7 +3,7 @@
 }
 
 .storyboard.first {
-  background-image: url('../../images/styleboards-bg-xl.png');
+  background-image: url('../images/styleboards-bg-xl.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 90% auto;
@@ -14,10 +14,25 @@
 }
 
 .storyboard img {
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.storyboard img.shadowed {
   box-shadow: 0px 16px 48px 0px rgba(69,68,67,0.24);
 }
 
-.storyboard .container {
+.storyboard .mask {
+  background-color: $brand-seaurchin;
+    content: '';
+    height: 0%;
+    left: 0px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+.storyboard > .container {
   @include media-breakpoint-up(sm) {
     max-width: 520px;
   }
@@ -30,3 +45,7 @@
     max-width: 1152px;
   }
 }
+
+/*
+ * STATE: Visible
+ */

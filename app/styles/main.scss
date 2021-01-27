@@ -4,11 +4,11 @@
 
 @import "node_modules/bootstrap/scss/bootstrap";
 
+@import "_animations";
 @import "_btn";
 @import "_typography";
+@import "components/_storyboard";
+@import "elements/_section";
 @import "landmarks/_header";
 @import "landmarks/_footer";
 @import "landmarks/_nav";
-@import "sections/_clients";
-@import "sections/_hero";
-@import "sections/_storyboards";

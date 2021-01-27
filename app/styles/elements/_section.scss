@@ -1,0 +1,52 @@
+section {}
+
+section > .container {
+  position: relative;
+  transform: translateY(100px);
+  transition: all 0.6s ease-in-out;
+}
+
+section.visible > .container {
+  transform: none;
+}
+
+/*
+ * CLIENTS
+ */
+section.clients {
+  margin: 9.5rem 0;
+}
+
+section.clients .headline.padded {
+  @include media-breakpoint-up(md) {
+    margin-top: 5rem;
+  }
+}
+
+/*
+ * HERO
+ */
+
+section.hero {
+  margin: 7.5rem 0;
+
+  @include media-breakpoint-up(sm) {
+    margin: 6.5rem 0 6rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin: 7.5rem 0 6rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin: 8.5rem 0 7rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    margin: 9.5rem 0 8rem;
+  }
+}
+
+section.hero h1 {
+  margin-bottom: 2.5rem;
+}
