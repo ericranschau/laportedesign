@@ -3,13 +3,33 @@
 }
 
 .storyboard.first {
-  background-image: url('../images/styleboards-bg-xl.png');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 90% auto;
+  position: relative;
+
+  &::before {
+    background-image: url('../images/styleboards-bg-xl.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 90% auto;
+    content: '';
+    left: 0;
+    height: 100%;
+    opacity: 1;
+    position: absolute;
+    transition: opacity 0.6s ease-out;
+    top: 0;
+    width: 100%;
+  }
 
   @include media-breakpoint-up(sm) {
-    background-size: 95% auto;
+    &::before {
+      background-size: 95% auto;
+    }
+  }
+}
+
+.storyboard.first.visible {
+  &::before {
+    opacity: 0.1;
   }
 }
 
