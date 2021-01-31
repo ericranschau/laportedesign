@@ -1,0 +1,10 @@
+.clients {}
+
+.clients .list > li {
+  transition: all 0.3s ease-out;
+  transform: translateY(20%);
+}
+
+.clients .list > li.active {
+  transform: translateY(0%);
+}

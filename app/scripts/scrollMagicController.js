@@ -36,6 +36,23 @@ $(function(){
     $element.addClass('visible');
   };
 
+  var scene_onEnter_storyboard_clients = function(event) {
+    var delay = 100;
+
+    var $element = $(event.target.triggerElement());
+    var $listElements = $('.list > li', $element);
+
+    $listElements.each(function(idx, el) {
+      var $el = $(el);
+
+      setTimeout(function() {
+        $el.addClass('active');
+      }, delay * idx);
+    });
+
+    $element.addClass('visible');
+  };
+
   $.each($sections, function(i, section) {
     var scene = new ScrollMagic.Scene({
         offset: CONSTANTS.offset,
@@ -46,6 +63,9 @@ $(function(){
     .addTo(controller)
     .on('enter', function(event) {
       switch(section.className) {
+        case 'clients':
+          scene_onEnter_storyboard_clients(event);
+          break;
         case 'storyboard':
         case 'storyboard first':
           scene_onEnter_storyboard(event);
