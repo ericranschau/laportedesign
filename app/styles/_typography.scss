@@ -73,9 +73,9 @@ p {
   background-position: 0 0;
   background-size: 200%;
   display: inline;
-  transition: .3s ease-in-out;
+  transition: all .3s ease-in-out;
 
-  &:hover {
+  &.visible {
     background-position: -100% 0;
   }
 }

@@ -2,31 +2,6 @@
   margin-bottom: 2.5rem;
 }
 
-.storyboard.first {
-  position: relative;
-
-  &::before {
-    background-image: url('../images/styleboards-bg-xl.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 90% auto;
-    content: '';
-    left: 0;
-    height: 100%;
-    opacity: 1;
-    position: absolute;
-    transition: opacity 0.6s ease-out;
-    top: 0;
-    width: 100%;
-  }
-
-  @include media-breakpoint-up(sm) {
-    &::before {
-      background-size: 95% auto;
-    }
-  }
-}
-
 .storyboard.first.visible {
   &::before {
     opacity: 0.1;
@@ -66,6 +41,37 @@
   }
 }
 
-/*
- * STATE: Visible
- */
+.storyboard-container {
+  position: relative;
+
+  background-attachment: fixed;
+  background-image: url('../images/styleboards-bg-xl.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 90% auto;
+
+  &::before {
+    animation-delay: 0.3s;
+    animation-duration: 2.4s;
+    animation-fill-mode: forwards;
+    background-color: #FFFFFF;
+    content: '';
+    height: 100%;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.3s ease-out;
+    width: 100%;
+  }
+
+  @include media-breakpoint-up(sm) {
+    background-size: 95% auto;
+  }
+}
+
+.storyboard-container.visible {
+  &::before {
+    animation-name: storyboard-bg;
+  }
+}

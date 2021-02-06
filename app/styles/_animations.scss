@@ -23,3 +23,9 @@
     right: 0;
   }
 }
+
+@keyframes storyboard-bg {
+  0% { opacity: 1; }
+  50% { opacity: 0.1; }
+  100% { opacity: 0.9; }
+}

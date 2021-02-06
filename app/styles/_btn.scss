@@ -12,3 +12,31 @@
     border-color: $brand-white;
   }
 }
+
+.projects-latest__header__btn {
+  font-size: 1.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: unset;
+  flex-direction: unset;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 215px;
+  height: 60px;
+  position: relative;
+  overflow: visible;
+}
+
+.btn.in-bounds {
+  cursor: pointer;
+}
