@@ -1,4 +1,26 @@
-.clients {}
+.clients blockquote {
+
+  &::after {
+    animation-delay: 0.5s;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    height: 0%;
+  }
+}
+
+.clients blockquote div {
+  animation-delay: 0.7s;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.clients .headline {
+  animation-delay: 0.3s;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
 
 .clients .list > li {
   transition: all 0.3s ease-out;
@@ -7,4 +29,23 @@
 
 .clients .list > li.visible {
   transform: translateY(0%);
+}
+
+/*
+ * STATE: Visible
+ */
+
+.clients.visible blockquote {
+
+  &::after {
+    animation-name: clients-blockquote;
+  }
+}
+
+.clients.visible blockquote div {
+  animation-name: clients-copy;
+}
+
+.clients.visible .headline {
+  animation-name: clients-headline;
 }

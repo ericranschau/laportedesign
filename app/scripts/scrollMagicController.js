@@ -1,6 +1,5 @@
 $(function(){
   var CONSTANTS = {
-    addIndicators: true,
     offset: 0,
     reverse: true,
     scene: 'section',
@@ -8,7 +7,7 @@ $(function(){
     triggerHook: 0.60,
   };
 
-  var controller = new ScrollMagic.Controller({ addIndicators: CONSTANTS.addIndicators });
+  var controller = new ScrollMagic.Controller();
 
   var $scenes = $(CONSTANTS.scene);
 
@@ -108,13 +107,13 @@ $(function(){
       triggerElement: section,
       triggerHook: CONSTANTS.triggerHook
     })
-    .addIndicators({
-      name: section.className,
-      indent: 520,
-      colorEnd: 'blue',
-      colorStart: 'red',
-      colorTrigger: 'red',
-    })
+    // .addIndicators({
+    //   name: section.className,
+    //   indent: 520,
+    //   colorEnd: 'blue',
+    //   colorStart: 'red',
+    //   colorTrigger: 'red',
+    // })
     .on('enter', function(event) {
       switch(section.className) {
         case 'clients':

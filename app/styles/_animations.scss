@@ -24,6 +24,33 @@
   }
 }
 
+@keyframes clients-blockquote {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes clients-copy {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes clients-headline {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes storyboard-bg-in {
   0% {
     opacity: 0;

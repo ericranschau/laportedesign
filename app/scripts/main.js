@@ -21,4 +21,6 @@ $(function(){
   $(window).scroll(function() {
       testWindowScrollPosition();
   });
+
+  testWindowScrollPosition();
 });
