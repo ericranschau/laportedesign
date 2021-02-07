@@ -128,3 +128,10 @@ p {
     column-count: 2;
   }
 }
+
+.text-cols.text-cols-2 p {
+  
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+  }
+}
