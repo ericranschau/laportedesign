@@ -1,0 +1,64 @@
+#preloader {
+    animation: 0.9s ease-out 0s 1 forwards preloader-background;
+    background-color: $brand-white;
+    left: 0px;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 100;
+}
+
+#preloader-inner {
+    animation-delay: 0.9s;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    background-color: $brand-white;
+    height: 0px;
+    position: fixed;
+    left: 50%;
+    top: 0px;
+    width: 5px;
+}
+
+#preloader-logo-gradient {
+    animation: 1.2s ease-in-out 0.9s infinite forwards preloader-logo-rotate;
+    left: 50%;
+    margin: -22px 0px 0px -22px;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+}
+
+#preloader-logo-white {
+    animation-delay: 0.9s;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: preloader-logo-rotate;
+    left: 50%;
+    margin: -22px 0px 0px -22px;
+    position: absolute;
+    top: 50%;
+}
+
+/*
+ * STATE: Images Loaded
+ */
+
+#preloader.imagesLoaded {
+    animation: 
+        0.9s ease-out 0s 1 forwards preloader-background,
+        0.9s ease-out 2.7s 1 forwards preloader-done;
+}
+
+#preloader.imagesLoaded #preloader-inner {
+    animation-name: preloader-inner;
+}
+
+#preloader.imagesLoaded #preloader-logo-gradient {
+    animation:
+        1.2s ease-in-out 0.9s infinite forwards preloader-logo-rotate, 
+        0s linear 1.65s 1 forwards preloader-logo-gradient;
+}

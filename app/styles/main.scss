@@ -5,7 +5,6 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
 @import "animations";
-@import "btn";
 @import "typography";
 
 @import "components/clients";
@@ -13,8 +12,10 @@
 @import "components/styleboard";
 
 @import "elements/body";
+@import "elements/btn";
 @import "elements/section";
 
 @import "landmarks/header";
 @import "landmarks/footer";
 @import "landmarks/nav";
+@import "landmarks/preloader";

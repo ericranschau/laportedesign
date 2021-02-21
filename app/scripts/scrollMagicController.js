@@ -1,5 +1,9 @@
 $(function(){
   var CONSTANTS = {
+    classes: {
+      backgroundStyleboard: 'background-styleboard',
+      styleboard: 'styleboard', 
+    },
     offset: 0,
     reverse: true,
     scene: 'section',
@@ -12,30 +16,19 @@ $(function(){
   var $scenes = $(CONSTANTS.scene);
 
   var scene_onEnter = function(event) {
-    var $element = $(event.target.triggerElement());
+    var element = event.target.triggerElement();
+    var $body = $('body');
+    var $element = $(element);
+
+    // console.log(element.className, event);
 
     $element.addClass(CONSTANTS.toggleClass);
-  };
 
-  var scene_onEnter_clients = function(event) {
-    var $body = $('body');
-    var $element = $(event.target.triggerElement());
-
-    $body.removeClass('background-styleboards');
-
-    if ($element.hasClass(CONSTANTS.toggleClass)) { return; }
-
-    // var delay = 100;
-
-    // var $listElements = $('.list > li', $element);
-
-    // $listElements.each(function(idx, el) {
-    //   var $el = $(el);
-
-    //   setTimeout(function() {
-    //     $el.addClass('visible');
-    //   }, delay * idx);
-    // });
+    if (element.className.split(/\s+/).indexOf(CONSTANTS.classes.styleboard) !== -1) {
+      $body.addClass(CONSTANTS.classes.backgroundStyleboard);
+    } else {
+      $body.removeClass(CONSTANTS.classes.backgroundStyleboard);
+    }
   };
 
   var scene_onEnter_hero = function(event) {
@@ -58,10 +51,7 @@ $(function(){
   };
 
   var scene_onEnter_styleboard = function(event) {
-    var $body = $('body');
     var $element = $(event.target.triggerElement());
-
-    $body.addClass('background-styleboard');
 
     if ($element.hasClass(CONSTANTS.toggleClass)) { return; }
 
@@ -107,20 +97,15 @@ $(function(){
       triggerElement: section,
       triggerHook: CONSTANTS.triggerHook
     })
-    .addIndicators({
-      name: section.className,
-      indent: 520,
-      colorEnd: 'blue',
-      colorStart: 'red',
-      colorTrigger: 'red',
-    })
-    .on('enter', function(event) {
+    // .addIndicators({
+    //   name: section.className,
+    //   indent: 520,
+    //   colorEnd: 'blue',
+    //   colorStart: 'red',
+    //   colorTrigger: 'red',
+    // })
+    .on('start', function(event) {
       switch(section.className) {
-        case 'clients':
-        case 'clients visible':
-          scene_onEnter_clients(event);
-          scene_onEnter(event);
-          break;
         case 'hero':
           scene_onEnter_hero(event);
           scene_onEnter(event);

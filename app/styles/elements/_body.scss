@@ -1,4 +1,5 @@
 body {
+    overflow: hidden;
     position: relative;
 
     &::before {
@@ -35,4 +36,8 @@ body.background-styleboard {
         animation-duration: 2.4s;
         animation-name: styleboard-bg-in;
     }
+}
+
+body.imagesLoaded {
+    overflow: auto;
 }

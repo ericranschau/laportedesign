@@ -51,6 +51,63 @@
   }
 }
 
+@keyframes preloader-background {
+  from {
+    background-color: $brand-white;
+  }
+  to {
+    background-color: $brand-belugawhale;
+  }
+}
+
+@keyframes preloader-done {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+
+@keyframes preloader-inner {
+  0% {
+    height: 0px;
+    width: 1px;
+  }
+  50% {
+    left: 50%;
+    height: 100%;
+    width: 1px;
+  }
+  100% {
+    left: 0%;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@keyframes preloader-logo-gradient {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes preloader-logo-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
 @keyframes styleboard-bg-in {
   0% {
     opacity: 0;

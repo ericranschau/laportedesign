@@ -5,8 +5,10 @@
   },
   "dependencies": {
     "bootstrap": "^4.5.3",
+    "imagesloaded": "^4.1.4",
     "jquery": "^3.4.1",
-    "popper.js": "^1.15.0"
+    "popper.js": "^1.15.0",
+    "scrollmagic": "^2.0.8"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
