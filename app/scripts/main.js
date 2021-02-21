@@ -1,16 +1,16 @@
 $(function(){
   var $body = $('body');
   var $header = $('header');
-  var $section_storyboard = $('section.storyboard');
+  var $section_styleboard = $('section.styleboard');
   var $nav = $('nav');
 
-  // Initialize storyboards
-  $('.container', $section_storyboard).append('<div class="mask"></div>');
+  // Initialize styleboards
+  $('.container', $section_styleboard).append('<div class="mask"></div>');
 
   var testWindowScrollPosition = function() {
       if (
-        document.body.scrollTop > $header.outerHeight(true) - $nav.outerHeight(true) ||
-        document.documentElement.scrollTop > $header.outerHeight(true) - $nav.outerHeight(true)
+        document.body.scrollTop > $nav.outerHeight(true) * 2 ||
+        document.documentElement.scrollTop > $nav.outerHeight(true) * 2
       ) {
           $nav.addClass('collapsed');
       } else {

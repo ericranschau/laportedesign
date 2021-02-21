@@ -21,21 +21,21 @@ $(function(){
     var $body = $('body');
     var $element = $(event.target.triggerElement());
 
-    $body.removeClass('background-storyboards');
+    $body.removeClass('background-styleboards');
 
     if ($element.hasClass(CONSTANTS.toggleClass)) { return; }
 
-    var delay = 100;
+    // var delay = 100;
 
-    var $listElements = $('.list > li', $element);
+    // var $listElements = $('.list > li', $element);
 
-    $listElements.each(function(idx, el) {
-      var $el = $(el);
+    // $listElements.each(function(idx, el) {
+    //   var $el = $(el);
 
-      setTimeout(function() {
-        $el.addClass('visible');
-      }, delay * idx);
-    });
+    //   setTimeout(function() {
+    //     $el.addClass('visible');
+    //   }, delay * idx);
+    // });
   };
 
   var scene_onEnter_hero = function(event) {
@@ -57,11 +57,11 @@ $(function(){
     });
   };
 
-  var scene_onEnter_storyboard = function(event) {
+  var scene_onEnter_styleboard = function(event) {
     var $body = $('body');
     var $element = $(event.target.triggerElement());
 
-    $body.addClass('background-storyboards');
+    $body.addClass('background-styleboard');
 
     if ($element.hasClass(CONSTANTS.toggleClass)) { return; }
 
@@ -92,11 +92,11 @@ $(function(){
     var $previousElement = $element.prev();
 
     if ($element.hasClass('storyboard') && $previousElement.hasClass('hero')) {
-      $body.removeClass('background-storyboards');
+      $body.removeClass('background-styleboards');
     }
 
     if ($element.hasClass('clients') && $previousElement.hasClass('storyboard')) {
-      $body.addClass('background-storyboards');
+      $body.addClass('background-styleboards');
     }
   };
 
@@ -107,13 +107,13 @@ $(function(){
       triggerElement: section,
       triggerHook: CONSTANTS.triggerHook
     })
-    // .addIndicators({
-    //   name: section.className,
-    //   indent: 520,
-    //   colorEnd: 'blue',
-    //   colorStart: 'red',
-    //   colorTrigger: 'red',
-    // })
+    .addIndicators({
+      name: section.className,
+      indent: 520,
+      colorEnd: 'blue',
+      colorStart: 'red',
+      colorTrigger: 'red',
+    })
     .on('enter', function(event) {
       switch(section.className) {
         case 'clients':
@@ -125,9 +125,13 @@ $(function(){
           scene_onEnter_hero(event);
           scene_onEnter(event);
           break;
-        case 'storyboard':
-        case 'storyboard visible':
-          scene_onEnter_storyboard(event);
+        case 'styleboard':
+        case 'styleboard first':
+        case 'styleboard last':
+        case 'styleboard visible':
+        case 'styleboard first visible':
+        case 'styleboard last visible':
+          scene_onEnter_styleboard(event);
           scene_onEnter(event);
           break;
         default:

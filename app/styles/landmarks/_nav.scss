@@ -1,10 +1,9 @@
 nav {
-
   padding: 1.5rem 0;
-  position: fixed;
+  position: absolute;
   transition: background-color 0.2s;
   width: 100%;
-  z-index: 1;
+  z-index: 3;
 }
 
 nav #contact {
@@ -39,6 +38,8 @@ nav #logo-gradient {
 nav.collapsed {
   backdrop-filter: blur(8px);
   background-color: rgba(248,248,248,0.8);
+  position: fixed;
+  z-index: 1;
 }
 
 nav.collapsed #contact {

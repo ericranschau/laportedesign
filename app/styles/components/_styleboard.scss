@@ -1,33 +1,35 @@
-.storyboard {
+.styleboard {
   margin-bottom: 2.5rem;
 }
 
-.storyboard.first.visible {
-  &::before {
-    opacity: 0.1;
-  }
+.styleboard.first {
+  padding-top: 9.5rem;
 }
 
-.storyboard img {
+.styleboard.last {
+  padding-bottom: 9.5rem;
+}
+
+.styleboard img {
   opacity: 0;
   transition: all 0.3s;
 }
 
-.storyboard img.shadowed {
+.styleboard img.shadowed {
   box-shadow: 0px 16px 48px 0px rgba(69,68,67,0.24);
 }
 
-.storyboard .mask {
+.styleboard .mask {
   background-color: $brand-seaurchin;
+  bottom: 0px;
   content: '';
   height: 0%;
-  left: 0px;
+  left: 12px;
   position: absolute;
-  bottom: 0px;
-  width: 100%;
+  right: 12px;
 }
 
-.storyboard > .container {
+.styleboard > .container {
   @include media-breakpoint-up(sm) {
     max-width: 520px;
   }
@@ -38,11 +40,5 @@
 
   @include media-breakpoint-up(lg) {
     max-width: 1152px;
-  }
-}
-
-.storyboard-container.visible {
-  &::before {
-    animation-name: storyboard-bg;
   }
 }

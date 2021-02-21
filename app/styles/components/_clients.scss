@@ -23,12 +23,9 @@
 }
 
 .clients .list > li {
+  opacity: 0;
   transition: all 0.3s ease-out;
   transform: translateY(20%);
-}
-
-.clients .list > li.visible {
-  transform: translateY(0%);
 }
 
 /*
@@ -48,4 +45,9 @@
 
 .clients.visible .headline {
   animation-name: clients-headline;
+}
+
+.clients.visible .list > li {
+  opacity: 1;
+  transform: translateY(0%);
 }

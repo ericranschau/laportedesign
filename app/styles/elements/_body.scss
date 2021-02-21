@@ -5,7 +5,7 @@ body {
         animation-delay: 0.3s;
         animation-duration: 0.6s;
         animation-fill-mode: forwards;
-        animation-name: storyboard-bg-out;
+        animation-name: styleboard-bg-out;
         background-attachment: fixed;
         background-image: url('../images/styleboards-bg-xl.png');
         background-position: center center;
@@ -29,10 +29,10 @@ body {
     }
 }
 
-body.background-storyboards {
+body.background-styleboard {
     
     &::before {
         animation-duration: 2.4s;
-        animation-name: storyboard-bg-in;
+        animation-name: styleboard-bg-in;
     }
 }

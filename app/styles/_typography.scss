@@ -2,7 +2,7 @@ a {
   color: $brand-anchors;
   position: relative;
 
-  &::after {
+  &:not(.btn)::after {
     animation-duration: 0.3s;
     animation-name: anchor-out;
     animation-fill-mode: forwards;

@@ -1,19 +1,20 @@
 
-@import "_fonts";
-@import "_variables";
+@import "fonts";
+@import "variables";
 
 @import "node_modules/bootstrap/scss/bootstrap";
 
-@import "_animations";
-@import "_btn";
-@import "_typography";
+@import "animations";
+@import "btn";
+@import "typography";
 
-@import "components/_clients";
-@import "components/_storyboard";
+@import "components/clients";
+@import "components/magicButton";
+@import "components/styleboard";
 
-@import "elements/_body";
-@import "elements/_section";
+@import "elements/body";
+@import "elements/section";
 
-@import "landmarks/_header";
-@import "landmarks/_footer";
-@import "landmarks/_nav";
+@import "landmarks/header";
+@import "landmarks/footer";
+@import "landmarks/nav";
