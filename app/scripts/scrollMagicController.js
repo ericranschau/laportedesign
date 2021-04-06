@@ -50,15 +50,15 @@ $(function(){
   };
 
   var scene_onEnter_styleboard = function(event) {
+    var $body = $('body');
     var $element = $(event.target.triggerElement());
+
+    $body.addClass(CONSTANTS.classes.backgroundStyleboard);
 
     if ($element.hasClass(CONSTANTS.toggleClass)) { return; }
 
     var $img = $('img', $element);
-    var $body = $('body');
     var $mask = $('.mask', $element);
-
-    $body.addClass(CONSTANTS.classes.backgroundStyleboard);
 
     $mask.delay(600).animate({
       height: '100%',
@@ -82,10 +82,15 @@ $(function(){
   };
 
   var scene_onLeave_clients = function(event) {
-    console.log('foo');
     var $body = $('body');
 
     $body.addClass(CONSTANTS.classes.backgroundStyleboard);
+  };
+
+  var scene_onLeave_storyboard = function(event) {
+    var $body = $('body');
+
+    $body.removeClass(CONSTANTS.classes.backgroundStyleboard);
   };
 
   $.each($scenes, function(i, section) {
@@ -95,13 +100,13 @@ $(function(){
       triggerElement: section,
       triggerHook: CONSTANTS.triggerHook
     })
-    .addIndicators({
-      name: section.className,
-      indent: 520,
-      colorEnd: 'blue',
-      colorStart: 'red',
-      colorTrigger: 'red',
-    })
+    // .addIndicators({
+    //   name: section.className,
+    //   indent: 520,
+    //   colorEnd: 'blue',
+    //   colorStart: 'red',
+    //   colorTrigger: 'red',
+    // })
     .on('leave', function(event) {
       switch(section.className) {
         case 'clients first':
@@ -109,6 +114,10 @@ $(function(){
           scene_onLeave_clients(event);
           scene_onLeave(event);
           break;
+        case 'styleboard first':
+        case 'styleboard first visible':
+          scene_onLeave_storyboard(event);
+          scene_onLeave(event);
         default:
           scene_onLeave(event);
       }

@@ -15,7 +15,7 @@ $(function(){
   var testImagesLoaded = function() {
     if (!headerImagesLoaded || !sectionImagesLoaded) { return; }
 
-    console.log('ALL IMAGES LOADED');
+    // console.log('ALL IMAGES LOADED');
 
     $body.addClass('imagesLoaded');
     $preloader.addClass('imagesLoaded');
