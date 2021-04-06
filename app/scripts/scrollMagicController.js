@@ -17,18 +17,17 @@ $(function(){
 
   var scene_onEnter = function(event) {
     var element = event.target.triggerElement();
-    var $body = $('body');
     var $element = $(element);
 
     // console.log(element.className, event);
 
     $element.addClass(CONSTANTS.toggleClass);
+  };
 
-    if (element.className.split(/\s+/).indexOf(CONSTANTS.classes.styleboard) !== -1) {
-      $body.addClass(CONSTANTS.classes.backgroundStyleboard);
-    } else {
-      $body.removeClass(CONSTANTS.classes.backgroundStyleboard);
-    }
+  var scene_onEnter_clients = function(event) {
+    var $body = $('body');
+
+    $body.removeClass(CONSTANTS.classes.backgroundStyleboard);
   };
 
   var scene_onEnter_hero = function(event) {
@@ -56,7 +55,10 @@ $(function(){
     if ($element.hasClass(CONSTANTS.toggleClass)) { return; }
 
     var $img = $('img', $element);
+    var $body = $('body');
     var $mask = $('.mask', $element);
+
+    $body.addClass(CONSTANTS.classes.backgroundStyleboard);
 
     $mask.delay(600).animate({
       height: '100%',
@@ -73,21 +75,17 @@ $(function(){
     });
   };
 
-  var scene_onStart = function(event) {
+  var scene_onLeave = function(event) {
+    // var element = event.target.triggerElement();
 
-    if (event.scrollDirection !== 'REVERSE') { return; }
+    // console.log(element.className, event);
+  };
 
+  var scene_onLeave_clients = function(event) {
+    console.log('foo');
     var $body = $('body');
-    var $element = $(event.target.triggerElement());
-    var $previousElement = $element.prev();
 
-    if ($element.hasClass('storyboard') && $previousElement.hasClass('hero')) {
-      $body.removeClass('background-styleboards');
-    }
-
-    if ($element.hasClass('clients') && $previousElement.hasClass('storyboard')) {
-      $body.addClass('background-styleboards');
-    }
+    $body.addClass(CONSTANTS.classes.backgroundStyleboard);
   };
 
   $.each($scenes, function(i, section) {
@@ -97,15 +95,31 @@ $(function(){
       triggerElement: section,
       triggerHook: CONSTANTS.triggerHook
     })
-    // .addIndicators({
-    //   name: section.className,
-    //   indent: 520,
-    //   colorEnd: 'blue',
-    //   colorStart: 'red',
-    //   colorTrigger: 'red',
-    // })
+    .addIndicators({
+      name: section.className,
+      indent: 520,
+      colorEnd: 'blue',
+      colorStart: 'red',
+      colorTrigger: 'red',
+    })
+    .on('leave', function(event) {
+      switch(section.className) {
+        case 'clients first':
+        case 'clients first visible':
+          scene_onLeave_clients(event);
+          scene_onLeave(event);
+          break;
+        default:
+          scene_onLeave(event);
+      }
+    })
     .on('start', function(event) {
       switch(section.className) {
+        case 'clients first':
+        case 'clients first visible':
+          scene_onEnter_clients(event);
+          scene_onEnter(event);
+          break;
         case 'hero':
           scene_onEnter_hero(event);
           scene_onEnter(event);
@@ -123,9 +137,6 @@ $(function(){
           scene_onEnter(event);
           break;
       }
-    })
-    .on('start', function(event) {
-      scene_onStart(event);
     })
     .addTo(controller);
   });

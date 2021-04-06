@@ -121,7 +121,10 @@
 }
 
 @keyframes styleboard-bg-out {
-  100% {
+  from {
+    opacity: 0.1;
+  }
+  to {
     opacity: 0;
   }
 }

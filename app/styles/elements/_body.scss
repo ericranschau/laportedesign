@@ -5,7 +5,7 @@ body {
     &::before {
         animation-delay: 0.3s;
         animation-duration: 0.6s;
-        animation-fill-mode: forwards;
+        animation-fill-mode: both;
         animation-name: styleboard-bg-out;
         background-attachment: fixed;
         background-image: url('../images/styleboards-bg-xl.png');
