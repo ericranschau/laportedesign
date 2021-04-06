@@ -19,6 +19,11 @@ $(function(){
 
     $body.addClass('imagesLoaded');
     $preloader.addClass('imagesLoaded');
+
+    // Hide the preloader once the animation is complete.
+    setTimeout(function() {
+      $preloader.hide();
+    }, 3600);
   };
 
   var testWindowScrollPosition = function() {
