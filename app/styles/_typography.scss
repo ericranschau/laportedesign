@@ -83,14 +83,28 @@ p {
 }
 
 .font-italic {
-  background: linear-gradient(to right, rgba(255,255,255,0) 50%, rgba(249,229,186,1.0) 50%);
-  background-position: 0 0;
-  background-size: 200%;
-  display: inline;
-  transition: all .3s ease-in-out;
+  display: inline-block;
+  position: relative;
+
+  &::before {
+    background: linear-gradient(to right, rgba(255,255,255,0) 50%, rgba(249,229,186,1.0) 50%);
+    background-position: 0 0;
+    background-size: 200%;
+    content: '';
+    display: inline;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: all .3s ease-in-out;
+    width: 100%;
+    z-index: -1;
+  }
 
   &.visible {
-    background-position: -100% 0;
+    &::before {
+      background-position: -100% 0;
+    }
   }
 }
 
