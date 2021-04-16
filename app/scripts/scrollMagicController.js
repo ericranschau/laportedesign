@@ -67,7 +67,7 @@ $(function(){
 
       $mask.css({ bottom: 'unset', top: '0px' });
 
-      $mask.delay(1000).animate({
+      $mask.delay(300).animate({
         height: '0%',
       }, 600, function() {
         $img.addClass('shadowed');
