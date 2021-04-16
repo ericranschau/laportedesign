@@ -1,0 +1,42 @@
+.hero blockquote {
+
+    &::after {
+        animation-delay: 0.5s;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+        height: 0%;
+    }
+}
+
+.hero blockquote div {
+    animation-delay: 0.7s;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.hero .headline {
+    animation-delay: 0.3s;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+/*
+ * STATE: Visible
+ */
+
+.hero.visible blockquote {
+
+  &::after {
+    animation-name: clients-blockquote;
+  }
+}
+
+.hero.visible blockquote div {
+  animation-name: clients-copy;
+}
+
+.hero.visible .headline {
+  animation-name: clients-headline;
+}
