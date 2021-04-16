@@ -7,21 +7,48 @@ nav {
 }
 
 nav #contact {
-  background-clip: padding-box;
-  box-sizing: border-box;
+  border: none;
   position: relative;
 
-  &::before {
-    border-radius: inherit;
-    bottom: 0px;
-    content: '';
-    left: 0px;
-    margin: -2px;
+  .icon {
+    height: calc(100% + 4px);
+    left: -2px;
     position: absolute;
-    transition: all 0.2s;
-    right: 0px;
-    top: 0px;
+    top: -2px;
+    transition: all 0.3s ease-out;
+    width: calc(100% + 4px);
     z-index: -1;
+
+    path {
+      transition: opacity 0.4s ease;
+
+      &:first-of-type {
+        fill: transparent;
+        opacity: 1;
+        stroke: #FFFFFF;
+        stroke-width: 6;
+        transition: all 0.3s ease-out;
+      }
+
+      &.icon--plain {
+        opacity: 0;
+        stroke: none;
+        stroke-width: 0;
+      }
+    }    
+  }
+
+  &:hover {
+    .icon {
+      height: calc(100% + 8px);
+      left: -4px;
+      top: -4px;
+      width: calc(100% + 8px);
+  
+      path:first-of-type {
+        stroke-width: 8;
+      }
+    }
   }
 }
 
@@ -43,12 +70,10 @@ nav.collapsed {
 }
 
 nav.collapsed #contact {
-  background-color: $brand-white;
-  border-color: transparent;
   color: $brand-brightcobalt;
 
-  &::before {
-    background: linear-gradient(to right, #415397, #DA5770);
+  .icon  path:first-of-type {
+    stroke: url(#linearGradient-1);
   }
 }
 
