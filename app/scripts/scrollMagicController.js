@@ -2,7 +2,7 @@ $(function(){
   var CONSTANTS = {
     classes: {
       backgroundStyleboard: 'background-styleboard',
-      styleboard: 'styleboard', 
+      styleboard: 'styleboard',
     },
     offset: 0,
     reverse: true,
@@ -18,8 +18,6 @@ $(function(){
   var scene_onEnter = function(event) {
     var element = event.target.triggerElement();
     var $element = $(element);
-
-    // console.log(element.className, event);
 
     $element.addClass(CONSTANTS.toggleClass);
   };
@@ -76,8 +74,6 @@ $(function(){
   };
 
   var scene_onLeave = function(event) {
-    // var element = event.target.triggerElement();
-
     // console.log(element.className, event);
   };
 
